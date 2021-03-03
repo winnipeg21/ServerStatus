@@ -90,7 +90,7 @@ public class ServerStatus extends Plugin {
     }
 
     public String getMessage(String key) {
-        String multiLineMessage = getConfig().getString("message").replace("\\n","\n");
+        String multiLineMessage = getConfig().getString("messages." + key, ").replace("\\n","\n");
         if(msg.isEmpty()) {
             return ChatColor.RED + "Unknown language key: " + ChatColor.YELLOW + key;
         } else {
